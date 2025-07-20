@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 82%;
+    margin: 0 auto;
+    padding: 0 16px;
+    /* border: 2px solid red; */ /* You can remove this after testing */
+}
+
+.nav {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; /* ✅ vertically center logo and buttons */
+}
+
+.logo-company {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo-company img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nav-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-nav {
+    /* background-color: rgb(96, 3, 182); */
+    background-color: #0C8CE9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: rgb(78, 2, 150); /* Optional hover effect */
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-h1 {
+    margin-top: 40px;
+    font-size: 44px;
+}
+
+.hero-span {
+    /* margin: 10px 30px; */
+    width: 75%;
+    margin-top: 20px;
+    color: rgb(178, 174, 174);
+}
+
+.hero-btn-section {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+
+}
+
+.hero-btn {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 2px;
+    /* background-color: rgb(96, 3, 182); */
+
+}
+
+.btn-hero1 {
+    background-color: #0C8CE9;
+
+    
+}
+
+.btn-hero2 {
+    background-color: gray;
+}
+
+.hero-video {
+
+    height: 90vh;
+    /* background-color: greenyellow; */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+.demo {
+
+
+    width: 80%;
+    margin: 0 auto;
+    /* Horizontally centers the box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ✅ Center children like h2 & span */
+    text-align: center;
+    /* ✅ Center the text content */
+
+}
+
+.demo-box {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: small;
+}
+
+.demo-h2 {
+    font-size: 25px;
+    text-align: center;
+    width: auto;
+
+}
+
+.demo-span {
+    /* margin-top: 50px !important; */
+    color: rgb(166, 164, 164);
+}
+
+
+.card-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 👈 3 cards on large screens */
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.card-section-box {
+
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-section-button {
+    border-radius: 50%;
+    padding: 12px 16px;
+    border: none;
+    /* background-color: rgb(96, 3, 182); */
+    background-color: #0887A0;
+    /* Purple */
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-section-title {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}
+
+.card-section-description {
+    margin-top: 10px;
+    font-size: 11px;
+    color: rgb(180, 180, 180);
+    /* Slightly dimmed white for contrast */
+    text-align: center;
+    line-height: 1.1;
+}
+
+.hr-line {
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.project-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.details {
+  width: 100%;
+}
+.details > span{
+    color: blue;
+    font-style: italic;
+    font-size: 9px;
+    margin-bottom: 8px;
+    font-weight: 100;
+}
+.details > h3{
+    margin-top: 5px;
+    font-size: 14px;
+}
+.details > p{
+    margin-top: 3px;
+    font-size: 10px;
+    word-spacing: 0.2rem;
+    color: #7a7878;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  font-size: 12px;
+  
+}
+
+.check-item > i{
+    color: blue;
+}
+.check-item > p{
+    font-size: 11px;
+    font-weight: 200;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .project-details {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .details,
+  .image {
+    width: 100%;
+  }
+
+  .check-item {
+    justify-content: center;
+  }
+}
+
+/* .project-section{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+.project-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.details{
+    width: 50%;
+}
+.image{
+    width: 50%;
+} */
+
+
+
+.product-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-demo-button {
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(121, 241, 127);
+    color: green;
+    font-weight: 600;
+}
+
+.product-demo>h2 {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.product-demo>span {
+    margin-top: 15px;
+    font-size: 11px;
+    color: rgb(180, 180, 180);
+    /* Slightly dimmed white for contrast */
+    text-align: center;
+    line-height: 1.1;
+
+}
+
+.review-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 25px;
+    gap: 18px;
+}
+
+.review-section {
+    /* background: rgb(19, 19, 19); */
+    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.reviewer-image {
+    margin-top: 7px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* ensures image doesn't overflow */
+    margin-bottom: 10px;
+}
+
+.reviewer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* maintains aspect ratio and fills circle */
+    display: block;
+}
+
+.review-section>p {
+    text-align: left;
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgb(158, 156, 156);
+    word-spacing: 1.5px;
+
+}
+
+.border-line {
+    border-bottom: 0.5px solid rgb(42, 41, 41);
+    outline: none;
+    margin: 8px 0;
+}
+
+.review-name {
+    font-size: 11px;
+    margin-top: 8px;
+    color: rgb(211, 209, 209);
+    word-spacing: 1.5px;
+
+}
+
+.review-name>span {
+    color: blue;
+}
+
+.advertise {
+    margin:40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background-color: rgb(4, 4, 103);
+    /* margin: 20px 0; */
+}
+
+.advertise-left {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 25px;
+}
+.advertise-left > span{
+ font-size: 11px;
+    margin-top: 10px;
+    color: rgb(211, 209, 209);
+    word-spacing: 1.8px;
+}
+.advertise-right{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.advertise-right >input{
+    background-color: rgb(10, 10, 75);
+    padding: 5px;
+    outline: none;
+    border-radius:2px ;
+    border: 1px solid rgb(29, 29, 84);
+}
+.advertise-right > button{
+    padding: 5px;
+}
+
+.footer-detail{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 10px;
+    font-size: 11px;
+    color: gray;
+}
+.footer-image{
+      margin-top: 7px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* ensures image doesn't overflow */
+    margin-bottom: 10px;
+    
+}
+.footer-image img{
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* maintains aspect ratio and fills circle */
+    display: block;
+}
+.footer-section p{
+    font-size: 0.6rem;
+    margin-top:  5px;
+}
+
+.link-section{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.link-left{
+    font-size: 0.7rem;
+    color: gray;
+}
+.link-left >span{
+    color: white;
+}
+.link-right{
+display: flex;
+gap: 2rem;
+color: blue;
+
+}
+.link-right i{
+    background-color: rgb(15, 15, 15);
+    padding: 6px;
+    border-radius: 50%;
+}
+@media (max-width: 1024px) {
+    .card-section {
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 👈 2 cards on medium screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .card-section {
+        grid-template-columns: 1fr;
+        /* 👈 1 card on mobile */
+    }
+}
+@media (max-width: 640px) {
+    .footer-detail {
+        grid-template-columns: 1fr;
+        /* 👈 1 card on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+    }
+
+    .nav-btn {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .hero-span,
+    .demo-box {
+        width: 90%;
+    }
+
+    .advertise {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .advertise-left,
+    .advertise-right {
+        margin: 10px auto;
+    }
+
+    .advertise-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advertise-right input,
+    .advertise-right button {
+        width: 100%;
+    }
+
+    .review-card {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-detail {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
