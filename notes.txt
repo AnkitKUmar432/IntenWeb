@@ -5,7 +5,19 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/AnkitKUmar432/IntenWeb.git
 git push -u origin main
-
+-------OR-------
 git remote add origin https://github.com/AnkitKUmar432/IntenWeb.git
 git branch -M main
 git push -u origin main
+
+
+------
+for single file
+git add index.html
+git commit -m "Add index.html file"
+git push origin main
+-----
+for multiple file
+git add .
+git commit -m "Update project with new changes"
+git push origin main
