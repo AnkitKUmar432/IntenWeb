@@ -21,3 +21,9 @@ for multiple file
 git add .
 git commit -m "Update project with new changes"
 git push origin main
+
+---------
+after close the vscode and reopen and some change with that file then
+git add .
+git commit -m "Your message here"
+git push origin main
