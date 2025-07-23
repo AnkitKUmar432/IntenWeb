@@ -14,14 +14,17 @@ body {
     max-width: 82%;
     margin: 0 auto;
     padding: 0 16px;
-    /* border: 2px solid red; */ /* You can remove this after testing */
+    /* border: 2px solid red; */
+    /* You can remove this after testing */
 }
 
 .nav {
     margin-top: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center; /* ✅ vertically center logo and buttons */
+    align-items: center;
+
+    /* ✅ vertically center logo and buttons */
 }
 
 .logo-company {
@@ -38,7 +41,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    display: inline-block;
 }
 
 .nav-btn {
@@ -57,11 +60,49 @@ body {
     padding: 6px 12px;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    /* transition: background-color 0.3s ease; */
+}
+
+@media (max-width:768px) {
+    .nav {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        row-gap: 10px;
+    }
+
+    .nav-btn {
+        justify-content: center;
+        margin-top: 8px;
+        gap: 10px;
+    }
+
+    .btn-nav {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+    } */
+
+    .logo-company {
+        /* display: flex;
+        align-items: start;
+        width: 30px;
+        height: 30px;
+        overflow: hidden; */
+        margin: 0 auto;
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .btn-nav:hover {
-    background-color: rgb(78, 2, 150); /* Optional hover effect */
+    background-color: rgb(78, 2, 150);
+    /* Optional hover effect */
 }
 
 
@@ -75,6 +116,7 @@ body {
 .hero-h1 {
     margin-top: 40px;
     font-size: 44px;
+    animation: slideIn 1s ease-in-out forwards;
 }
 
 .hero-span {
@@ -82,6 +124,31 @@ body {
     width: 75%;
     margin-top: 20px;
     color: rgb(178, 174, 174);
+    animation: bounce 1.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateX(+50px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .hero-btn-section {
@@ -101,18 +168,45 @@ body {
 
 .btn-hero1 {
     background-color: #0C8CE9;
-
-    
+    animation: heroBtn1 0.7s ease-in-out forwards;
 }
 
 .btn-hero2 {
-    background-color: gray;
+    background-color: rgb(154, 154, 154);
+    animation: heroBtn2 0.7s ease-in-out forwards;
+
+}
+ .active {
+      background-color: blue;
+      color: white;
+    }
+
+@keyframes heroBtn1 {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes heroBtn2 {
+    from {
+        transform: translateX(+100px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .hero-video {
-
     height: 90vh;
-    /* background-color: greenyellow; */
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -126,18 +220,12 @@ body {
 }
 
 .demo {
-
-
     width: 80%;
     margin: 0 auto;
-    /* Horizontally centers the box */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* ✅ Center children like h2 & span */
     text-align: center;
-    /* ✅ Center the text content */
-
 }
 
 .demo-box {
@@ -152,12 +240,31 @@ body {
     font-size: 25px;
     text-align: center;
     width: auto;
+    animation: demoh2 1s ease-in-out forwards;
+  
 
 }
 
 .demo-span {
     /* margin-top: 50px !important; */
     color: rgb(166, 164, 164);
+    animation: demohSpan 1.5s ease-in-out forwards;
+
+}
+
+@keyframes demoh2 {
+    from {
+        /* transform: translateY(+80); */
+        transform: scaleX(0);
+        opacity: 0;
+    }
+
+    to {
+        /* transform: translateY(30); */
+        transform: scaleX(1);
+
+        opacity: 1;
+    }
 }
 
 
@@ -212,35 +319,38 @@ body {
 }
 
 .project-section {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 20px;
 }
 
 .project-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .details {
-  width: 100%;
+    width: 100%;
 }
-.details > span{
+
+.details>span {
     color: blue;
     font-style: italic;
     font-size: 9px;
     margin-bottom: 8px;
     font-weight: 100;
 }
-.details > h3{
+
+.details>h3 {
     margin-top: 5px;
     font-size: 14px;
 }
-.details > p{
+
+.details>p {
     margin-top: 3px;
     font-size: 10px;
     word-spacing: 0.2rem;
@@ -248,44 +358,64 @@ body {
 }
 
 .image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
 }
 
 .check-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 10px;
-  font-size: 12px;
-  
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+    font-size: 12px;
+
 }
 
-.check-item > i{
+.check-item>i {
     color: blue;
 }
-.check-item > p{
+
+.check-item>p {
     font-size: 11px;
     font-weight: 200;
 }
 
 /* Responsive for smaller screens */
+@media (max-width:768px) {
+    .container {
+        max-width: 92%;
+        margin: 0 auto;
+        padding: 0 16px;
+        /* border: 2px solid red; */
+        /* You can remove this after testing */
+    }
+
+    @media (max-width:600px) {
+        .container {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+
+    }
+}
+
 @media (max-width: 768px) {
-  .project-details {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .project-details {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-  .details,
-  .image {
-    width: 100%;
-  }
+    .details,
+    .image {
+        width: 100%;
+    }
 
-  .check-item {
-    justify-content: center;
-  }
+    .check-item {
+        justify-content: center;
+    }
 }
 
 
@@ -382,7 +512,7 @@ body {
 }
 
 .advertise {
-    margin:40px 0;
+    margin: 40px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -395,89 +525,122 @@ body {
     flex-direction: column;
     margin: 30px 25px;
 }
-.advertise-left > span{
- font-size: 11px;
+
+.advertise-left>span {
+    font-size: 11px;
     margin-top: 10px;
     color: rgb(211, 209, 209);
     word-spacing: 1.8px;
 }
-.advertise-right{
+
+.advertise-right {
     margin: auto;
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
-.advertise-right >input{
+
+.advertise-right>input {
     background-color: rgb(10, 10, 75);
     padding: 5px;
     outline: none;
-    border-radius:2px ;
+    border-radius: 2px;
     border: 1px solid rgb(29, 29, 84);
 }
-.advertise-right > button{
+
+.advertise-right>button {
     padding: 5px;
 }
 
-.footer-detail{
+.footer-detail {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 10px;
     font-size: 11px;
     color: gray;
 }
-.footer-image{
-      margin-top: 7px;
+
+.footer-image {
+    margin-top: 7px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     overflow: hidden;
     /* ensures image doesn't overflow */
     margin-bottom: 10px;
-    
+
 }
-.footer-image img{
-     width: 100%;
+
+.footer-image img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     /* maintains aspect ratio and fills circle */
     display: block;
 }
-.footer-section p{
+
+.footer-section p {
     font-size: 0.6rem;
-    margin-top:  5px;
+    margin-top: 5px;
 }
 
-.link-section{
+.link-section {
     margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.link-left{
+.link-left {
     font-size: 0.7rem;
     color: gray;
 }
-.link-left >span{
+
+.link-left>span {
     color: white;
 }
-.link-right{
-display: flex;
-gap: 2rem;
-color: blue;
+
+.link-right {
+    display: flex;
+    gap: 2rem;
+    color: blue;
 
 }
-.link-right i{
+
+@media (max-width:480px) {
+    .link-section {
+        grid-template-columns: 1fr;
+        align-items: center;
+        margin: 10px auto;
+        border-top: 1px solid rgb(22, 22, 22);
+
+    }
+
+    .link-left {
+        margin: 7px auto;
+    }
+
+    .link-right {
+        margin: auto;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    /* tablets */
+
+}
+
+.link-right i {
     background-color: rgb(15, 15, 15);
     padding: 6px;
     border-radius: 50%;
 }
+
 @media (max-width: 1024px) {
     .card-section {
         grid-template-columns: 1fr 1fr 1fr;
         /* 👈 2 cards on medium screens */
     }
-    
+
 }
 
 @media (max-width: 640px) {
@@ -486,37 +649,39 @@ color: blue;
         /* 👈 1 card on mobile */
     }
 }
+
 @media (max-width: 640px) {
-  .footer-detail {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .footer-detail {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-  .footer-image {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-  }
+    .footer-image {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+    }
 
-  .footer-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+    .footer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 }
 
 
 @media (max-width:640px) {
-    .footer-image{
+    .footer-image {
         width: 20px;
         height: 10px;
         border-radius: 50%;
     }
-    
+
 }
+
 @media (max-width: 768px) {
     .nav {
         grid-template-columns: 1fr;
@@ -561,5 +726,25 @@ color: blue;
     .footer-detail {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .card-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-image {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+    }
+
+    .link-right {
+        gap: 10px;
     }
 }
